@@ -1,4 +1,3 @@
-// projeto-2/components/AreaAdmin.js
 import { useState, useEffect } from 'react';
 import {
   View, Text, TextInput, TouchableOpacity,
@@ -92,23 +91,10 @@ export default function AreaAdmin({ navigation }) {
     Alert.alert('Sucesso!', `"${name}" cadastrado com sucesso.`);
   }
 
-  function handleDelete(id) {
-    Alert.alert(
-      'Remover produto',
-      'Tem certeza que deseja remover este produto?',
-      [
-        { text: 'Cancelar', style: 'cancel' },
-        {
-          text: 'Remover',
-          style: 'destructive',
-          onPress: () => {
-            setProducts((prev) => prev.filter((p) => p.id !== id));
-            setPendingSave(true);
-          },
-        },
-      ]
-    );
-  }
+function handleDelete(id) {
+  setProducts((prev) => prev.filter((p) => p.id !== id));
+  setPendingSave(true);
+}
 
   // ─── UI ────────────────────────────────────────────────────────────────────
   return (
