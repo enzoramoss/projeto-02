@@ -74,7 +74,7 @@ export default function AreaAdmin({ navigation }) {
       (p) => p.name.toLowerCase() === name.toLowerCase()
     );
     if (alreadyExists) {
-      alert('Atenção', 'Já existe um produto com esse nome.');
+      alert('Atenção, já existe um produto com esse nome.');
       return;
     }
 
@@ -88,7 +88,7 @@ export default function AreaAdmin({ navigation }) {
     setProducts((prev) => [...prev, newProduct]);
     setPendingSave(true);
     setForm(EMPTY_FORM);
-    alert('Sucesso!', `"${name}" cadastrado com sucesso.`);
+    alert(`Sucesso! "${name}" cadastrado com sucesso.`);
   }
 
 function handleDelete(id) {

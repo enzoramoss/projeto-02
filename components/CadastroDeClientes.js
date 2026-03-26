@@ -34,11 +34,11 @@ export default function CadastroDeClientes({ navigation }) {
       try {
         await AsyncStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(users));
         setPendingRegister(false);
-        alert('Sucesso!', 'Usuário cadastrado com sucesso.');
+        alert('Sucesso!, usuário cadastrado com sucesso.');
         navigation.navigate('Login');
       } catch (error) {
         console.error('Erro ao salvar usuário:', error);
-        alert('Erro', 'Não foi possível salvar o cadastro.');
+        alert('Erro, não foi possível salvar o cadastro.');
       }
     }
 
