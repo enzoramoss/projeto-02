@@ -50,12 +50,12 @@ export default function CadastroDeClientes({ navigation }) {
     const trimmedPassword = password.trim();
 
     if (trimmedName === '' || trimmedPassword === '') {
-      alert('Atenção', 'Preencha todos os campos.');
+      alert('Atenção, preencha todos os campos.');
       return;
     }
 
     if (users === null) {
-      alert('Aguarde', 'Carregando dados, tente novamente.');
+      alert('Aguarde, carregando dados, tente novamente.');
       return;
     }
 

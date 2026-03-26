@@ -55,18 +55,18 @@ export default function AreaAdmin({ navigation }) {
     const price = form.price.trim();
 
     if (!name || !description || !price) {
-      alert('Atenção', 'Preencha todos os campos antes de cadastrar.');
+      alert('Atenção, preencha todos os campos antes de cadastrar.');
       return;
     }
 
     const parsedPrice = parseFloat(price.replace(',', '.'));
     if (isNaN(parsedPrice) || parsedPrice <= 0) {
-      alert('Atenção', 'Informe um preço válido (ex: 29.90).');
+      alert('Atenção, informe um preço válido (ex: 29.90).');
       return;
     }
 
     if (products === null) {
-      alert('Aguarde', 'Os dados ainda estão sendo carregados.');
+      alert('Aguarde, os dados ainda estão sendo carregados.');
       return;
     }
 

@@ -89,7 +89,7 @@ export default function AreaDoCliente({ navigation, route }) {
       return [...prev, { ...product, qty }];
     });
     setPendingCartSave(true);
-    alert('✓ Adicionado', `${qty}× "${product.name}" no carrinho.`);
+    alert(`✓ Adicionado ${qty}× "${product.name}" no carrinho.`);
   }
 
   function changeCartQty(productId, delta) {
@@ -109,25 +109,19 @@ export default function AreaDoCliente({ navigation, route }) {
   function handleCheckout() {
     if (!cart || cart.length === 0) return;
     const total = formatPrice(cartTotal(cart));
-    alert(
-      '🛒 Confirmar compra',
-      `Total: ${total}\n\nDeseja finalizar o pedido?`,
-      [
-        { text: 'Cancelar', style: 'cancel' },
-        {
-          text: 'Comprar',
-          onPress: () => {
-            setCart([]);
-            setPendingCartSave(true);
-            alert(
-              '🎉 Pedido realizado!',
-              `Obrigado, ${clientName}! Seu pedido foi registrado com sucesso.`,
-              [{ text: 'OK', onPress: () => setTab('store') }]
-            );
-          },
-        },
-      ]
-    );
+
+    let messageConstructor = ``
+
+    let string1 = "🛒 Confirmar compra\n"
+    let string2 = `Total: ${total}\n\nDeseja finalizar o pedido?\n`
+
+    messageConstructor += string1
+    messageConstructor += string2
+
+    if (confirm(messageConstructor)) {
+      setCart([]);
+      setPendingCartSave(true);
+    }
   }
 
   // ── Loading ─────────────────────────────────────────────────────────────────

@@ -49,7 +49,7 @@ export default function Login({ navigation }) {
     const trimmedPassword = password.trim();
 
     if (trimmedName === '' || trimmedPassword === '') {
-      Alert.alert('Atenção', 'Preencha todos os campos.');
+      alert('Atenção, preencha todos os campos.');
       return;
     }
 
